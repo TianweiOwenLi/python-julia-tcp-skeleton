@@ -24,8 +24,6 @@ try
     data = readline(conn)
     
     if data == "close"
-      dbg_print("[client] shutting down")
-      close(conn)
       break
     end
 
@@ -36,3 +34,6 @@ try
 catch err
   print("connection err: $err")
 end
+
+dbg_print("[client] shutting down")
+close(conn)
